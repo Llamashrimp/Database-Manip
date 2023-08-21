@@ -34,7 +34,7 @@ table_data = [(id1, name1, grade1), (id2, name2, grade2), (id3, name3, grade3), 
 # used the list to add the data into the created table
 cursor.executemany('''INSERT INTO python_programming(id, name, grade)
                   VALUES(?,?,?)''', table_data)
-print("Users have been added")
+print("\nUsers have been added")
 
 db.commit()
 # search for and display specific students with a grade between 60 to 80
@@ -44,17 +44,18 @@ cursor.execute('''
 range_students = cursor.fetchall()
 # for loop to print off each students id, name and grade
 for row in range_students:
-    print(f"id: {row[0]}, name: {row[1]}, grade: {row[2]}")
-# changed grade for student with a specific name
+    print(f"\nid: {row[0]}\n, name: {row[1]}\n, grade: {row[2]}")
+
 grade = 65
 name = "Carl Davis"
 cursor.execute('''UPDATE python_programming SET grade = ? WHERE name = ? ''', (grade, name))
-print('Student data updated!')
-# changed grades for students with ID below 55
+print('\nStudent data updated!')
+
+# changed grade for student with a specific name
 grade = 20
 cursor.execute('''UPDATE python_programming SET grade = ? WHERE id < 55 = ? ''', (grade, 55))
 db.commit()
-print("Student Data Updated!")
+print("\nStudent Data Updated!")
 
 
 

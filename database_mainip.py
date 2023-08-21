@@ -50,7 +50,7 @@ grade = 65
 name = "Carl Davis"
 cursor.execute('''UPDATE python_programming SET grade = ? WHERE name = ? ''', (grade, name))
 print('Student data updated!')
-# changed grades for students with ID's below 55
+# changed grades for students with ID below 55
 grade = 20
 cursor.execute('''UPDATE python_programming SET grade = ? WHERE id < 55 = ? ''', (grade, 55))
 db.commit()
